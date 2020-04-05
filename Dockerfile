@@ -69,4 +69,18 @@ RUN echo "source /opt/root/bin/thisroot.sh" >> $HOME/.bashrc
 RUN ["/bin/bash", "-c", "source $HOME/.bashrc \
     && cp -r $ROOTSYS/etc/notebook/kernels/root $HOME/.local/share/jupyter/kernels"]
 
+# Lastly install grub tools
+RUN apt-get install -y grub \
+    grub-pc-bin \
+    xorriso
+
+## LAST LAST
+ADD ./kickup.bash /kickup.bash
+
+RUN chmod +x /kickup.bash
+
+WORKDIR /app
+SHELL ["/bin/bash", "-c"]
+ENTRYPOINT ["/kickup.bash"]
+
 
