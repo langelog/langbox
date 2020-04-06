@@ -63,8 +63,8 @@ RUN cd $HOME/cross \
     && make install-gcc \
     && make install-target-libgcc
 
-# Final configs
-RUN echo "export PATH='/opt/cross/bin:$PATH'" >> $HOME/.bashrc
+# Final configs [addeed golang latex fix for PATH env]
+RUN echo "export PATH='/opt/cross/bin:/usr/local/go/bin:$PATH'" >> $HOME/.bashrc
 RUN echo "source /opt/root/bin/thisroot.sh" >> $HOME/.bashrc
 RUN ["/bin/bash", "-c", "source $HOME/.bashrc \
     && cp -r $ROOTSYS/etc/notebook/kernels/root $HOME/.local/share/jupyter/kernels"]
