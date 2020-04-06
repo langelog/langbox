@@ -8,5 +8,5 @@ To use it, just do:
 > And of course, set the port you want to use... Happy coding :)
 
 ```bash
-$ docker run --rm -v $PWD:/app -p 1314:1314 langelog/langbox:0.1.4_base root --notebook --ip 0.0.0.0 --port 1314 --allow-root
+$ docker run --rm -v $PWD:/app -p 1314:1314 langelog/langbox:0.1.5_base root --notebook --ip 0.0.0.0 --port 1314 --allow-root
 ```
