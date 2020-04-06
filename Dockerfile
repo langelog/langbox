@@ -68,6 +68,9 @@ RUN echo "export PATH='/opt/cross/bin:/usr/local/go/bin:$PATH'" >> $HOME/.bashrc
 RUN echo "source /opt/root/bin/thisroot.sh" >> $HOME/.bashrc
 RUN ["/bin/bash", "-c", "source $HOME/.bashrc \
     && cp -r $ROOTSYS/etc/notebook/kernels/root $HOME/.local/share/jupyter/kernels"]
+# and vim :)
+RUN echo "syntax on" >> $HOME/.vimrc
+RUN echo "set number" >> $HOME/.vimrc
 
 # Lastly install grub tools
 RUN apt-get install -y grub \
