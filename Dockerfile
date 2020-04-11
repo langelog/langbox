@@ -78,6 +78,7 @@ RUN apt-get install -y grub \
     xorriso
 
 ## LAST LAST
+# this is added to allow the execution of the image as a program
 ADD ./kickup.bash /kickup.bash
 
 RUN chmod +x /kickup.bash
